@@ -4,52 +4,58 @@ import { ReactTyped } from "react-typed";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 const Hero = () => {
   return (
-    <section className={styles.container}>
-      <span className={styles.title}>
-        <h1>
-          <span>{`Hi I am, `}</span>
+    <section className={`${styles.hero} container`}>
+      <div className={styles.hero_content}>
+        <div className={styles.intro}>
+          <h1>Hey there, I'm</h1>
           <ReactTyped
             className={styles.typed_text}
-            strings={["Neha Kamble,", "a React Developer."]}
+            strings={[
+              "Neha Kamble,",
+              "a React Developer,",
+              "turning ideas into code.",
+            ]}
             typeSpeed={100}
             backSpeed={30}
             loop
           />
-        </h1>
-      </span>
-      <div className={styles.description}>
-        Front-end developer with over 3 years of experience crafting fast,
-        responsive UIs in React. I turn designs into clean, high-quality code
-        that just works.
-      </div>
-      <div className={styles.socials}>
-        <a href="https://github.com/NehaKamble1998" target="_blank">
-          <FaGithub
-            style={{
-              height: "2em",
-              width: "2em",
-              border: "0.5px solid #a5c8ff4D",
-              borderRadius: "4px",
-              padding: "5px",
-              color: "white",
-            }}
-          />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/neha-kamble-5594aa2aa/"
-          target="_blank"
-        >
-          <FaLinkedin
-            style={{
-              height: "2em",
-              width: "2em",
-              border: "0.5px solid #a5c8ff4D",
-              borderRadius: "4px",
-              padding: "5px",
-              color: "white",
-            }}
-          />
-        </a>
+        </div>
+        <div className={styles.description}>
+          I'm a front-end enthusiast with 3+ years of experience building sleek,
+          user-friendly interfaces in React. Whether it's transforming design
+          files into interactive experiences or optimizing for performance, I
+          strive to create seamless digital experiences that leave a lasting
+          impression.
+        </div>
+        <div className={styles.socials}>
+          <a href="https://github.com/NehaKamble1998" target="_blank">
+            <FaGithub
+              style={{
+                height: "2em",
+                width: "2em",
+                border: "0.5px solid #a5c8ff4D",
+                borderRadius: "4px",
+                padding: "5px",
+                color: "white",
+              }}
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/neha-kamble-5594aa2aa/"
+            target="_blank"
+          >
+            <FaLinkedin
+              style={{
+                height: "2em",
+                width: "2em",
+                border: "0.5px solid #a5c8ff4D",
+                borderRadius: "4px",
+                padding: "5px",
+                color: "white",
+              }}
+            />
+          </a>
+        </div>
       </div>
     </section>
   );

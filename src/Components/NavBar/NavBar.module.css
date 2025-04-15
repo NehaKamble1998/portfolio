@@ -1,16 +1,16 @@
 .navbar {
-  position: relative;
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 2.5rem;
 }
 
 .title {
   font-size: 2rem;
   font-weight: 700;
   text-decoration: none;
-  color: #a5c8ff;
+  color: var(--text-white);
 }
 
 .menu {
@@ -28,8 +28,7 @@
 .menuItems a {
   font-size: 20px;
   font-weight: 400px;
-  color: #ffffff;
-  text-decoration: none;
+  color: var(--text-white);
 }
 
 .burger_menu {
@@ -66,7 +65,7 @@
   .burger_menu {
     display: block;
     cursor: pointer;
-    color: #ffffff;
+    color: var(--text-white);
   }
 
   .menuItems.menu_opened {
