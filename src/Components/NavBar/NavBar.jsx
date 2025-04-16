@@ -1,24 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./NavBar.module.css";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
 import { Link } from "react-scroll";
 const NavBar = () => {
   const [menu, setMenu] = useState("closed");
-  const [sticky, setSticky] = useState(false);
-
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      window.scrollY > 50 ? setSticky(true) : setSticky(false);
-    });
-  }, []);
 
   return (
-    <nav
-      className={`${styles.navbar} ${
-        sticky ? styles.sticky_nav : ""
-      } container`}
-    >
+    <nav className={`${styles.navbar} container`}>
       <Link to="/" smooth offset={0} duration={500}>
         <img
           src="/logo.png"
@@ -32,27 +21,57 @@ const NavBar = () => {
         onClick={() => setMenu("closed")}
       >
         <li>
-          <Link to="about" smooth offset={0} duration={500}>
+          <Link
+            to="about"
+            smooth
+            offset={0}
+            duration={500}
+            onClick={() => setMenu("closed")}
+          >
             About
           </Link>
         </li>
         <li>
-          <Link to="experience" smooth offset={0} duration={500}>
+          <Link
+            to="experience"
+            smooth
+            offset={0}
+            duration={500}
+            onClick={() => setMenu("closed")}
+          >
             Experience
           </Link>
         </li>
         <li>
-          <Link to="projects" smooth offset={0} duration={500}>
+          <Link
+            to="projects"
+            smooth
+            offset={0}
+            duration={500}
+            onClick={() => setMenu("closed")}
+          >
             Projects
           </Link>
         </li>
         <li>
-          <Link to="contact" smooth offset={0} duration={500}>
+          <Link
+            to="contact"
+            smooth
+            offset={0}
+            duration={500}
+            onClick={() => setMenu("closed")}
+          >
             Contact
           </Link>
         </li>
         <li>
-          <Link to="contact" smooth offset={0} duration={500}>
+          <Link
+            to="contact"
+            smooth
+            offset={0}
+            duration={500}
+            onClick={() => setMenu("closed")}
+          >
             <button className="nav_btn">Hire Me!</button>
           </Link>
         </li>

@@ -1,5 +1,5 @@
 .navbar {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -34,7 +34,7 @@
 }
 
 .sticky_nav {
-  border-bottom: 1px solid white;
+  background-color: #4a90e2;
   transition: 0.5s all ease;
 }
 
@@ -63,4 +63,3 @@
     right: -200px;
   }
 }
-
