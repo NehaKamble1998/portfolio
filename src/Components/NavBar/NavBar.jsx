@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <nav className={`${styles.navbar} container`}>
       <a href="/" className={styles.title}>
-        Portfolio
+        <img src="/logo.png" alt="logo" style={{height: '100px'}}/>  
       </a>
       <ul
         className={`${styles.menuItems} ${
