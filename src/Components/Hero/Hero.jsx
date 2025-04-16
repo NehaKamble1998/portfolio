@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./Hero.module.css";
 import { messages } from "../../data/message";
 import { ReactTyped } from "react-typed";
@@ -7,13 +7,19 @@ const Hero = () => {
   const [message, setMessage] = useState(
     "Click the crystal ball to get a coding advice..."
   );
+  const timeoutRef = useRef(null);
 
   const getRandomMessage = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
     const randomIndex = Math.floor(Math.random() * messages.length);
     const newMessage = messages[randomIndex];
     setMessage(newMessage);
 
-    setTimeout(() => {
+    // Set a new timeout and store its ID in the ref
+    timeoutRef.current = setTimeout(() => {
       setMessage("Click the crystal ball to get a coding advice...");
     }, 5000);
   };
@@ -44,12 +50,15 @@ const Hero = () => {
         </div>
 
         <div className={styles.socials}>
-          <a href="https://github.com/NehaKamble1998" target="_blank">
+          <a
+            href="https://github.com/NehaKamble1998"
+            target="_blank"
+            className={styles.iconLink}
+          >
             <FaGithub
               style={{
                 height: "2em",
                 width: "2em",
-                border: "0.5px solid #a5c8ff4D",
                 borderRadius: "4px",
                 padding: "5px",
                 color: "white",
@@ -59,12 +68,12 @@ const Hero = () => {
           <a
             href="https://www.linkedin.com/in/neha-kamble-5594aa2aa/"
             target="_blank"
+            className={styles.iconLink}
           >
             <FaLinkedin
               style={{
                 height: "2em",
                 width: "2em",
-                border: "0.5px solid #a5c8ff4D",
                 borderRadius: "4px",
                 padding: "5px",
                 color: "white",
@@ -75,7 +84,7 @@ const Hero = () => {
       </div>
       <div className={styles.crystalContainer}>
         <div className={styles.ball} onClick={getRandomMessage}>
-          🔮
+          <img src="/crystal_ball.png" alt="crystal-ball" />
         </div>
         <p className={styles.message}>{message}</p>
       </div>

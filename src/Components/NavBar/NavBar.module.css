@@ -1,81 +1,76 @@
 .navbar {
-  padding-top: 0;
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  padding: 0 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 9999;
+  isolation: isolate;
 }
 
-.title {
-  font-size: 2rem;
-  font-weight: 700;
-  text-decoration: none;
-  color: var(--text-white);
+.logo {
+  width: 100px;
 }
 
-.menu {
+.navbar ul {
   display: flex;
   align-items: center;
-}
-
-.menuItems {
-  display: flex;
+  justify-content: center;
   gap: 20px;
-  align-items: center;
-  list-style: none;
+  list-style-type: none;
 }
 
-.menuItems a {
+.navbar ul li {
   font-size: 20px;
   font-weight: 400px;
   color: var(--text-white);
 }
 
-.burger_menu {
+.menu {
   display: none;
+  z-index: 10000;
 }
 
-@media screen and (max-width: 900px) {
-  .menu {
-    position: absolute;
+.sticky_nav {
+  border-bottom: 1px solid white;
+  transition: 0.5s all ease;
+}
+
+@media screen and (max-width: 840px) {
+  .navbar {
+    padding: 0 2.5rem;
+  }
+
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    bottom: 0;
     right: 0;
-    margin-right: 10%;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 12px;
-    z-index: 3;
-  }
-
-  .menuItems {
-    position: absolute;
-    display: none;
-    padding: 1.5rem 2rem;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    border-radius: 10px;
-    background: linear-gradient(
-      0deg,
-      rgba(19, 29, 66, 0.2) 0%,
-      rgba(27, 42, 94, 1) 100%
-    );
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
-  }
-
-  .burger_menu {
-    display: block;
-    cursor: pointer;
-    color: var(--text-white);
-  }
-
-  .menuItems.menu_opened {
+    width: 200px;
+    z-index: 9999;
     display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transition: 0.5s all ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .navbar ul.menu_closed {
+    position: fixed;
+    right: -200px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .navbar {
-    padding: 2rem;
+    padding: 0 2.5rem;
   }
 }
