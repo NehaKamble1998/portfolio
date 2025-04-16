@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Hero.module.css";
+import { messages } from "../../data/message";
 import { ReactTyped } from "react-typed";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 const Hero = () => {
+  const [message, setMessage] = useState(
+    "Click the crystal ball to get a coding advice..."
+  );
+
+  const getRandomMessage = () => {
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    const newMessage = messages[randomIndex];
+    setMessage(newMessage);
+
+    setTimeout(() => {
+      setMessage("Click the crystal ball to get a coding advice...");
+    }, 5000);
+  };
+
   return (
     <section className={`${styles.hero} container`}>
       <div className={styles.hero_content}>
@@ -27,6 +42,7 @@ const Hero = () => {
           strive to create seamless digital experiences that leave a lasting
           impression.
         </div>
+
         <div className={styles.socials}>
           <a href="https://github.com/NehaKamble1998" target="_blank">
             <FaGithub
@@ -56,6 +72,12 @@ const Hero = () => {
             />
           </a>
         </div>
+      </div>
+      <div className={styles.crystalContainer}>
+        <div className={styles.ball} onClick={getRandomMessage}>
+          🔮
+        </div>
+        <p className={styles.message}>{message}</p>
       </div>
     </section>
   );
