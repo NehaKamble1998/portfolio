@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./Hero.module.css";
 import { messages } from "../../data/message";
 import { ReactTyped } from "react-typed";
@@ -7,13 +7,19 @@ const Hero = () => {
   const [message, setMessage] = useState(
     "Click the crystal ball to get a coding advice..."
   );
+  const timeoutRef = useRef(null);
 
   const getRandomMessage = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+
     const randomIndex = Math.floor(Math.random() * messages.length);
     const newMessage = messages[randomIndex];
     setMessage(newMessage);
 
-    setTimeout(() => {
+    // Set a new timeout and store its ID in the ref
+    timeoutRef.current = setTimeout(() => {
       setMessage("Click the crystal ball to get a coding advice...");
     }, 5000);
   };
@@ -58,8 +64,7 @@ const Hero = () => {
           </a>
           <a
             href="https://www.linkedin.com/in/neha-kamble-5594aa2aa/"
-            target="_blank"
-          >
+            target="_blank">
             <FaLinkedin
               style={{
                 height: "2em",

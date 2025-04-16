@@ -1,37 +1,58 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./NavBar.module.css";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
+import { Link } from "react-scroll";
 const NavBar = () => {
   const [menu, setMenu] = useState("closed");
+  const [sticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 50 ? setSticky(true) : setSticky(false);
+    });
+  }, []);
+
   return (
-    <nav className={`${styles.navbar} container`}>
-      <a href="/" className={styles.title}>
-        <img src="/logo.png" alt="logo" style={{height: '100px'}}/>  
-      </a>
+    <nav className={`${styles.navbar} ${sticky ? styles.sticky_nav : ""}`}>
+      <Link to="/" smooth offset={0} duration={500}>
+        <img
+          src="/logo.png"
+          alt="logo"
+          style={{ height: "100px" }}
+          className={styles.logo}
+        />
+      </Link>
       <ul
-        className={`${styles.menuItems} ${
-          menu === "opened" && styles.menu_opened
-        }`}
-        onClick={() => setMenu("closed")}
-      >
+        className={`${menu === "closed" && styles.menu_closed}`}
+        onClick={() => setMenu("closed")}>
         <li>
-          <a href="#about">About</a>
+          <Link to="about" smooth offset={0} duration={500}>
+            About
+          </Link>
         </li>
         <li>
-          <a href="#experience">Experience</a>
+          <Link to="experience" smooth offset={0} duration={500}>
+            Experience
+          </Link>
         </li>
         <li>
-          <a href="#projects">Projects</a>
+          <Link to="projects" smooth offset={0} duration={500}>
+            Projects
+          </Link>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <Link to="contact" smooth offset={0} duration={500}>
+            Contact
+          </Link>
         </li>
         <li>
-          <button className="nav_btn">Hire Me!</button>
+          <Link to="contact" smooth offset={0} duration={500}>
+            <button className="nav_btn">Hire Me!</button>
+          </Link>
         </li>
       </ul>
-      {/* <div className={styles.menu}>
+      <div className={styles.menu}>
         {menu === "closed" && (
           <HiMenuAlt2
             className={styles.burger_menu}
@@ -41,32 +62,12 @@ const NavBar = () => {
         )}
         {menu === "opened" && (
           <MdClose
-            className={styles.burger_menu}
+            className={styles.closeIcon}
             style={{ height: "3em", width: "3em" }}
             onClick={() => setMenu("closed")}
           />
         )}
-
-        <ul
-          className={`${styles.menuItems} ${
-            menu === "opened" && styles.menu_opened
-          }`}
-          onClick={() => setMenu("closed")}
-        >
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#experience">Experience</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-      </div> */}
+      </div>
     </nav>
   );
 };

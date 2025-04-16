@@ -19,7 +19,7 @@ a {
 }
 
 .container {
-  padding: 2rem 2.5rem;
+  padding: 2rem 5rem;
 }
 
 button {
@@ -53,4 +53,10 @@ button::before {
 
 button:hover::before {
   transform: scaleY(1);
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 2.5rem;
+  }
 }
