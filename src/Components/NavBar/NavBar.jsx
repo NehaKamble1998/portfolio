@@ -14,18 +14,23 @@ const NavBar = () => {
   }, []);
 
   return (
-    <nav className={`${styles.navbar} ${sticky ? styles.sticky_nav : ""}`}>
+    <nav
+      className={`${styles.navbar} ${
+        sticky ? styles.sticky_nav : ""
+      } container`}
+    >
       <Link to="/" smooth offset={0} duration={500}>
         <img
           src="/logo.png"
           alt="logo"
-          style={{ height: "100px" }}
+          style={{ height: "50px", width: "50px" }}
           className={styles.logo}
         />
       </Link>
       <ul
         className={`${menu === "closed" && styles.menu_closed}`}
-        onClick={() => setMenu("closed")}>
+        onClick={() => setMenu("closed")}
+      >
         <li>
           <Link to="about" smooth offset={0} duration={500}>
             About
