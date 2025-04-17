@@ -18,10 +18,77 @@
   font-size: 2rem;
 }
 
-.tools {
+.tool_grid_container {
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
 }
 
+.tool_category {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+.category_title {
+  background: linear-gradient(to right, #ffffff, #a5c8ff, #5a9dfc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  border-bottom: 3px solid var(--text-white);
+  padding-bottom: 10px;
+}
+
+.tool_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.tool_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  text-align: center;
+}
+
+.tool_icon {
+  height: 70px;
+  width: 70px;
+  transition: 0.5s all ease;
+}
+
+.tool_icon:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 1200px) {
+  .tool_grid_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .tool_grid_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .tool_grid_container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 @media screen and (max-width: 480px) {
   .title {
