@@ -1,74 +1,69 @@
 export const tools = {
-  "Languages": [
+  Languages: [
     {
       name: "HTML",
-      image: "/html.webp",
+      image: "/icons8-html-100.png",
       doc: "https://developer.mozilla.org/en-US/docs/Web/HTML",
     },
     {
       name: "CSS",
-      image: "/css-logo.webp",
+      image: "/icons8-css-96.png",
       doc: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     },
     {
       name: "JavaScript",
-      image: "/js.webp",
+      image: "/icons8-javascript-100.png",
       doc: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
   ],
   "Frameworks & Libraries": [
     {
       name: "React JS",
-      image: "/react.webp",
+      image: "/icons8-react-96.png",
       doc: "https://reactjs.org/docs/getting-started.html",
     },
     {
       name: "Redux Toolkit",
-      image: "/redux.png",
+      image: "/icons8-redux-100.png",
       doc: "https://redux-toolkit.js.org/introduction/getting-started",
     },
     {
       name: "React Router",
-      image: "/routerr.png",
+      image: "/react-router-svgrepo-com.svg",
       doc: "https://reactrouter.com/en/main",
     },
   ],
   "Styling & UI": [
     {
       name: "Tailwind CSS",
-      image: "/tailwind.webp",
+      image: "/icons8-tailwind-css-96.png",
       doc: "https://tailwindcss.com/docs/installation",
     },
     {
       name: "Bootstrap",
-      image: "/bootstrap.webp",
+      image: "/icons8-bootstrap-100.png",
       doc: "https://getbootstrap.com/docs/5.3/getting-started/introduction/",
     },
     {
       name: "Styled Components",
-      image: "/styled-component.webp",
+      image: "/styled-components-svgrepo-com.svg",
       doc: "https://styled-components.com/docs",
     },
   ],
   "Tools & Platforms": [
     {
-      name: "Adobe Experience Manager",
-      image: "/aem.webp",
-      doc: "https://experienceleague.adobe.com/docs/experience-manager-cloud-service.html",
-    },
-    {
       name: "Git",
-      image: "/git.webp",
+      image: "/icons8-git-100.png",
       doc: "https://git-scm.com/doc",
     },
     {
-      name: "VS Code",
-      image: "/vscode.webp",
-      doc: "https://code.visualstudio.com/docs",
+      name: "NPM",
+      image: "/icons8-npm-100.png",
+      doc: "https://docs.npmjs.com/",
     },
     {
       name: "Figma",
-      image: "/figma.webp",
+      image: "/icons8-figma-100.png",
       doc: "https://help.figma.com/hc/en-us",
     },
   ],
