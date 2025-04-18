@@ -15,6 +15,11 @@ export const tools = {
       image: "/icons8-javascript-100.png",
       doc: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
+    {
+      name: "TypeScript",
+      image: "/icons8-typescript-100.png",
+      doc: "https://www.typescriptlang.org/docs/",
+    },
   ],
   "Frameworks & Libraries": [
     {
@@ -32,12 +37,22 @@ export const tools = {
       image: "/react-router-svgrepo-com.svg",
       doc: "https://reactrouter.com/en/main",
     },
+    {
+      name: "React Hook Form",
+      image: "/react-hook-form.png",
+      doc: "https://react-hook-form.com/",
+    },
   ],
   "Styling & UI": [
     {
       name: "Tailwind CSS",
       image: "/icons8-tailwind-css-96.png",
       doc: "https://tailwindcss.com/docs/installation",
+    },
+    {
+      name: "CSS Modules",
+      image: "/css-modules.png",
+      doc: "https://github.com/css-modules/css-modules",
     },
     {
       name: "Bootstrap",
@@ -51,6 +66,11 @@ export const tools = {
     },
   ],
   "Tools & Platforms": [
+    {
+      name: "AEM",
+      image: "/aem.png",
+      doc: "https://experienceleague.adobe.com/en/docs/experience-manager-65",
+    },
     {
       name: "Git",
       image: "/icons8-git-100.png",

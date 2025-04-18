@@ -3,6 +3,8 @@ import styles from "./App.module.css";
 import NavBar from "./Components/NavBar/NavBar";
 import Hero from "./Components/Hero/Hero";
 import About from "./Components/About/About";
+import Experience from "./Components/Experience/Experience";
+import Projects from "./Components/Projects/Projects";
 
 const App = () => {
   return (
@@ -10,6 +12,8 @@ const App = () => {
       <NavBar />
       <Hero />
       <About/>
+      <Experience/>
+      <Projects/>
     </div>
   );
 };

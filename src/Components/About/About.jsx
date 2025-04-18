@@ -2,12 +2,17 @@ import React from "react";
 import styles from "./About.module.css";
 import { tools } from "../../data/toolsAndTechs";
 import { motion } from "framer-motion";
+import { FaCode } from "react-icons/fa";
+import { MdOutlineFileDownload } from "react-icons/md";
+import { RiChatSmile3Line } from "react-icons/ri";
 
 const About = () => {
   return (
     <section id="about" className="container">
       <div className={styles.about}>
-        <h2 className={styles.title}>About Me</h2>
+        <h2 className="title">
+        <RiChatSmile3Line /> About Me
+        </h2>
 
         <p className={styles.description}>
           Hi, Im Neha! I'm a front-end developer who loves crafting smooth,
@@ -23,8 +28,21 @@ const About = () => {
           geeking out over clean UI, and finding new ways to make the web just a
           little more awesome.
         </p>
+        <button>
+          <a
+            href="/Neha_Kamble_React_Developer.pdf"
+            download
+            className={styles.resume}
+          >
+            Grab my resume here <MdOutlineFileDownload />
+          </a>
+        </button>
+
+        <br />
         <div>
-          <h3 className={styles.tools_title}>🚀 Tech I Work With</h3>
+          <h3 className={styles.tools_title}>
+            <FaCode /> Tech I Work With
+          </h3>
         </div>
         <div className={styles.tool_grid_container}>
           {Object.entries(tools).map(([category, items]) => (

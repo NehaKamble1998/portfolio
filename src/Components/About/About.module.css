@@ -5,17 +5,24 @@
   gap: 20px;
 }
 
-.title {
-  font-size: 3rem;
-}
-
 .description {
   font-size: 1.5rem;
   color: var(--text-white);
 }
 
+.resume {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.2rem;
+  color: var(--priamry-color);
+}
+
 .tools_title {
   font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .tool_grid_container {
@@ -43,10 +50,7 @@
 }
 
 .category_title {
-  background: linear-gradient(to right, #ffffff, #a5c8ff, #5a9dfc);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  color: var(--priamry-color);
   border-bottom: 3px solid var(--text-white);
   padding-bottom: 10px;
 }
@@ -97,10 +101,6 @@
 }
 
 @media screen and (max-width: 480px) {
-  .title {
-    font-size: 2rem;
-  }
-
   .description {
     font-size: 1rem;
     color: var(--text-white);

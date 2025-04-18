@@ -1,0 +1,25 @@
+.experience {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: var(--text-white);
+}
+
+.experience h3 {
+  font-weight: 400;
+}
+
+.work {
+  font-size: 1.5rem;
+  color: var(--text-white);
+}
+
+@media screen and (max-width: 480px) {
+  .work {
+    font-size: 1rem;
+  }
+}

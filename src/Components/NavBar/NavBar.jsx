@@ -61,18 +61,7 @@ const NavBar = () => {
             duration={500}
             onClick={() => setMenu("closed")}
           >
-            Contact
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="contact"
-            smooth
-            offset={0}
-            duration={500}
-            onClick={() => setMenu("closed")}
-          >
-            <button className="nav_btn">Hire Me!</button>
+            <button className="nav_btn">Contact</button>
           </Link>
         </li>
       </ul>
