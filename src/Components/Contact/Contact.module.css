@@ -1,0 +1,74 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.contact_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 30px;
+}
+
+.contact_form {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(200, 200, 255, 0.05)
+  );
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.form_input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form_input label {
+  font-size: 1.5rem;
+  color: var(--text-white);
+}
+
+.form_input input,
+textarea {
+  background-color: rgba(165, 200, 255, 0.08);
+  border-radius: 3px;
+  height: 40px;
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text-white);
+}
+
+textarea {
+  height: 150px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .contact_grid {
+    grid-template-columns: unset;
+    grid-template-rows: 1fr 1.5fr;
+  }
+
+  .contact_grid > :nth-child(1) {
+    order: 2;
+  }
+  .contact_grid > :nth-child(2) {
+    order: 1;
+  }
+}
