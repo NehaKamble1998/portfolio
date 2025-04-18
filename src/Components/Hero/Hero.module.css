@@ -7,9 +7,11 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  background: url("/public/blue-abstract-background_78370-97.jpg");
+  background-image: url(/public/bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: #111144;
+  background-blend-mode: multiply;
 }
 
 .hero_content {
@@ -84,28 +86,36 @@
 }
 
 .crystalContainer {
+  position: relative;
   height: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5),
-    inset 0 1px 1px rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
-  border-radius: 1rem;
   width: 100%;
   color: var(--text-white);
   text-align: center;
   transition: all 0.3s ease;
 }
 
+.crystalContainer::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.4)url("/public/image-from-rawpixel-id-12740457-png.png");
+  background-size: cover;
+  opacity: 0.5;
+}
+
 .ball img {
-  height: 4rem;
-  width: 4rem;
+  height: 6rem;
+  width: 6rem;
   cursor: pointer;
   animation: float 3s ease-in-out infinite;
 }
@@ -113,8 +123,9 @@
 .message {
   margin-top: 1rem;
   font-size: 1.5rem;
-  color: #d1d5f0;
+  color: var(--primary-color);
   min-height: 3rem;
+  z-index: 3;
 }
 
 @keyframes float {
@@ -186,6 +197,11 @@
 
   .description {
     font-size: 1rem;
+  }
+
+  .ball img {
+    height: 4rem;
+    width: 4rem;
   }
 
   .message {

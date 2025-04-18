@@ -3,6 +3,7 @@ import styles from "./Hero.module.css";
 import { messages } from "../../data/message";
 import { ReactTyped } from "react-typed";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 const Hero = () => {
   const [message, setMessage] = useState(
     "Click the crystal ball to get a coding advice..."
@@ -86,7 +87,18 @@ const Hero = () => {
         <div className={styles.ball} onClick={getRandomMessage}>
           <img src="/crystal_ball.png" alt="crystal-ball" />
         </div>
-        <p className={styles.message}>{message}</p>
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={message} 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className={styles.message}
+          >
+            {message}
+          </motion.p>
+        </AnimatePresence>
       </div>
     </section>
   );
