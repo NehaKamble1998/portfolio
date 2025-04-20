@@ -56,7 +56,79 @@ textarea {
 input::placeholder,
 textarea::placeholder {
   color: var(--primary-color);
+  opacity: 0.5;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 5px var(--text-white);
+}
+
+.form_btns {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.form_error {
+  margin-top: 5px;
+  color: rgba(255, 100, 100, 0.9);
+}
+
+.form_input input.error_input,
+textarea.error_input {
+  border: 1px solid #e57373;
+  box-shadow: 0 0 5px rgba(229, 115, 115, 0.5);
+}
+
+input.error_input:focus,
+textarea.error_input:focus {
+  border: 1px solid #e57373;
+  box-shadow: 0 0 5px rgba(229, 115, 115, 0.5);
+}
+
+.error_msg,
+.thankyou_msg {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  background: radial-gradient(circle, #1c003c, #090014);
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 10px;
+  z-index: 20;
+  transition: all 0.5s ease;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.error_msg.show,
+.thankyou-msg.show {
   opacity: 1;
+  visibility: visible;
+}
+
+.error_msg .close,
+.thankyou_msg .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 25px;
+}
+
+.error_msg h2,
+.thankyou_msg h2 {
+  margin: 0;
+  color: var(--text_color);
+}
+
+.error_msg p,
+.thankyou-msg p {
+  color: var(--text_color);
 }
 
 @media screen and (max-width: 1200px) {

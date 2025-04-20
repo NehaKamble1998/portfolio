@@ -7,11 +7,11 @@ export const projects = [
   {
     img: "/gemini-app.png",
     name: "Gemini Clone",
-    link: "",
+    link: "https://github.com/NehaKamble1998/gemini-clone",
   },
   {
     img: "/weather-app.png",
     name: "Weather App",
-    link: "",
+    link: "https://github.com/NehaKamble1998/weather-app",
   },
 ];
