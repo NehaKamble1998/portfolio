@@ -13,8 +13,6 @@ const Contact = () => {
   const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
   const [loading, setLoading] = useState(false);
-  const [success, setSuccsess] = useState(false);
-  const [error, setError] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const { register, handleSubmit, formState, reset } = useForm();
@@ -55,7 +53,6 @@ const Contact = () => {
       }
 
       if (!hasError) {
-        setSuccsess(true);
         reset();
         captchaRef.current.reset();
         toast.success(
@@ -66,7 +63,6 @@ const Contact = () => {
           }
         );
       } else {
-        setError(true);
         toast.error("🙁 Something went wrong. Please try again.", {
           duration: 5000,
           position: "top-center",
@@ -98,31 +94,6 @@ const Contact = () => {
         <IoMdContact />
         Contact Me
       </h1>
-      <div className={`${styles.thankyou_msg} ${success ? "show" : ""}`}>
-        <button
-          type="button"
-          className="close"
-          onClick={() => setSuccsess(false)}
-        >
-          <img src="close.png" alt="close icon" />
-        </button>
-        <h2>🎉 Thank You!</h2>
-        <p>
-          Your message has been sent successfully. I’ll get back to you as soon
-          as possible. Have a great day! 😊
-        </p>
-      </div>
-      <div className={`${styles.error_msg} ${error ? "show" : ""}`}>
-        <button
-          type="button"
-          className={styles.close}
-          onClick={() => setError(false)}
-        >
-          {/* <img src="close.png" alt="close icon" /> */} close
-        </button>
-        <h2>⚠️ Error</h2>
-        <p>🙁 Something went wrong. Please try again.</p>
-      </div>
       {loading && (
         <div className="loader">
           <span className="spinner"></span>
