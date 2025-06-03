@@ -90,7 +90,7 @@
 
 .crystalContainer {
   position: relative;
-  height: 60%;
+  height: 40%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -139,6 +139,12 @@
   }
   50% {
     transform: translateY(5px);
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .crystalContainer {
+    height: 60%;
   }
 }
 
